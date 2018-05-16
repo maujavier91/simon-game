@@ -10,32 +10,32 @@ body{ box-sizing: border-box; background: bisque; display: flex; flex-flow: colu
 .row-item{
     justify-content: space-evenly;
 }
-#blue{box-sizing: border-box; 
-background-color: rgb(0, 0, 127); width: 45%; height: 80%; border-bottom-right-radius: 100%;
+.blueOff{background-color: rgb(0, 0, 127); border-bottom-right-radius: 100%
 }
-#yellow{box-sizing: border-box; 
-background-color: rgb(180, 180, 0); width: 45%; height: 80%; border-bottom-left-radius: 100%;
+.yellowOff{background-color: rgb(180, 180, 0); border-bottom-left-radius: 100%
 }
-#green{box-sizing: border-box;
-background-color: rgb(0, 127, 0); width: 45%; height: 80%; border-top-left-radius: 100%; 
+.greenOff{
+background-color: rgb(0, 127, 0);  border-top-left-radius: 100%
 }
-#red{box-sizing: border-box;
-background-color: rgb(127, 0, 0); width: 45%; height: 80%; border-top-right-radius: 100%; 
+.redOff{background-color: rgb(127, 0, 0);  border-top-right-radius: 100%
 }
-#blue:hover{
-    background-color: rgb(0, 170, 255);
+.colorSimon{
+    box-sizing: border-box; width: 45%; height: 80%; 
 }
-
-#yellow:hover{
-    background-color: rgb(255, 255, 0)
+.blueOn{
+    background-color: rgb(0, 170, 255);border-bottom-right-radius: 100%
 }
 
-#green:hover{
-    background-color: hsl(120, 100%, 66%);
+.yellowOn{
+    background-color: rgb(255, 255, 0);border-bottom-left-radius: 100%
 }
 
-#red:hover{
-    background-color: rgb(255, 0, 0);
+.greenOn{
+    background-color: hsl(120, 100%, 66%); border-top-left-radius: 100%
+}
+
+.redOn{
+    background-color: rgb(255, 0, 0); border-top-right-radius: 100%
 }
 
 .control{box-sizing: border-box; 
