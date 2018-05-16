@@ -9,10 +9,14 @@ let red    = "red",
     gOn="greenOn",
     bOn="blueOn",
     rOn="redOn",
-    yOn="yellowOn";
+    yOn="yellowOn",
+    sg="#greenSound",
+    sr="#redSound",
+    sb="#blueSound",
+    sy="#yellowSound";
 let sequence = []; 
-
-
+$(function () {
+    
 function toggleColor(colorOfSimon){
     switch (this.id){
         case green: $(g).toggleClass(gOn);
@@ -30,6 +34,18 @@ function toggleColor(colorOfSimon){
         $(y).removeClass(yOn);
         break;
     }
+}
+
+function playSound(){
+    switch (this.id){
+        case green: document.getElementById(gOn).play();
+        break;
+        case blue: document.getElementById(bOn).play();
+        break;
+        case red: document.getElementById(rOn).play();
+        break;
+        case yellow: document.getElementById(yOn).play();
+        break;}
 }
 
 function addToSequence(){
@@ -62,7 +78,14 @@ function numberColor(elementOfSequence){
    $(b).mousedown(toggleColor);
    $(g).mousedown(toggleColor);
    $(y).mousedown(toggleColor);
+   $(r).mousedown(playSound);
+   $(b).mousedown(playSound);
+   $(g).mousedown(playSound);
+   $(y).mousedown(playSound);
    $("body").mouseup(toggleColor);
+   
 
 
    
+    
+});
