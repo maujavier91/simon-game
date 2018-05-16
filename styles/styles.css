@@ -1,14 +1,17 @@
 .container{box-sizing: border-box; display: flex; justify-content: center; background-color: black;
-width: 50vw; height: 80%; flex-flow: row nowrap; border-radius: 100%; align-items: center; flex-direction: column; align-content: center; box-sizing: border-box}
-body{ box-sizing: border-box; background: bisque; display: flex; flex-flow: column nowrap; text-align: center; justify-content: space-between; align-items: center; }
+width: 50%; height: 80%; flex-flow: row nowrap; border-radius: 100%; align-items: center;
+flex-direction: column; align-content: center; box-sizing: border-box;}
+body{ box-sizing: border-box; background: bisque; display: flex; flex-flow: column nowrap; 
+    text-align: center; justify-content: space-between; align-items: center;}
 .row{ box-sizing: border-box;
-    display: flex; width: 80%; height: 80%; flex-flow: row nowrap; align-items: center; justify-content: space-between; 
+    display: flex; width: 80%; height: 80%; flex-flow: row nowrap; align-items: center; 
+    justify-content: space-between;
 }
 .row-item{
-    justify-content: space-evenly; align-items: center
+    justify-content: space-evenly;
 }
 #blue{box-sizing: border-box; 
-background-color: rgb(0, 0, 255); width: 45%; height: 80%; border-bottom-right-radius: 100%;
+background-color: rgb(0, 0, 127); width: 45%; height: 80%; border-bottom-right-radius: 100%;
 }
 #yellow{box-sizing: border-box; 
 background-color: rgb(180, 180, 0); width: 45%; height: 80%; border-bottom-left-radius: 100%;
@@ -17,14 +20,14 @@ background-color: rgb(180, 180, 0); width: 45%; height: 80%; border-bottom-left-
 background-color: rgb(0, 127, 0); width: 45%; height: 80%; border-top-left-radius: 100%; 
 }
 #red{box-sizing: border-box;
-background-color: rgb(255, 0, 0); width: 45%; height: 80%; border-top-right-radius: 100%; 
+background-color: rgb(127, 0, 0); width: 45%; height: 80%; border-top-right-radius: 100%; 
 }
 #blue:hover{
-    background-color: hsl(200, 100%, 50%);
+    background-color: rgb(0, 170, 255);
 }
 
 #yellow:hover{
-    background-color: rgb(255, 255, 86)
+    background-color: rgb(255, 255, 0)
 }
 
 #green:hover{
@@ -32,10 +35,24 @@ background-color: rgb(255, 0, 0); width: 45%; height: 80%; border-top-right-radi
 }
 
 #red:hover{
-    background-color: rgb(255, 162, 162);
+    background-color: rgb(255, 0, 0);
 }
 
 .control{box-sizing: border-box; 
     background-color: rgb(247, 247, 253); width: 25%; height: 25%; border-radius: 100%;
-    position: absolute; display: flex; justify-content: space-evenly; flex-flow: column nowrap; align-items: center
+    position: absolute; display: flex; justify-content: space-evenly; flex-flow: column nowrap; 
+    align-items: center;
+    border: 1em solid black
     }
+
+#score{
+    width: 4em;
+    background-color: black;
+    color: greenyellow;
+    text-align: center
+
+}
+
+#title-game{
+    letter-spacing: 0.5em
+}
