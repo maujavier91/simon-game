@@ -22,26 +22,24 @@ let sequence = [];
 $(function () {
     
 function toggleColor(){
-    switch (this.id){
-        case green: $(g).toggleClass(gOn); console.log("toque");
+    that=this;
+    switch (that.id){
+        case green: $(g).addClass(gOn); playSound(that); setTimeout(()=>$(g).removeClass(gOn), 300);
         break;
-        case blue: $(b).toggleClass(bOn);
+        case blue: $(b).toggleClass(bOn); playSound(that); setTimeout(()=>$(b).removeClass(bOn), 300);
         break;
-        case red: $(r).toggleClass(rOn);
+        case red: $(r).toggleClass(rOn); playSound(that); setTimeout(()=>$(r).removeClass(rOn), 300);
         break;
-        case yellow: $(y).toggleClass(yOn);
+        case yellow: $(y).toggleClass(yOn); playSound(that); setTimeout(()=>$(y).removeClass(yOn), 300);
         break;
         default : 
-        $(g).removeClass(gOn);
-        $(b).removeClass(bOn);
-        $(r).removeClass(rOn);
-        $(y).removeClass(yOn);
+        
         break;
     }
 }
 
-function playSound(){
-    switch (this.id){
+function playSound(that){
+    switch (that.id){
         case green: audiogreen.play().then(() => { 
         }).catch((err) => {
             console.log(error);
@@ -86,20 +84,12 @@ function numberColor(elementOfSequence){
             break;
     }
 }
-   $(r).mouseup(toggleColor);
-   $(b).mouseup(toggleColor);
-   $(g).mouseup(toggleColor);
-   $(y).mouseup(toggleColor);
-   $(r).mousedown(toggleColor);
-   $(b).mousedown(toggleColor);
-   $(g).mousedown(toggleColor);
-   $(y).mousedown(toggleColor);
-   $(r).mousedown(playSound);
-   $(b).mousedown(playSound);
-   $(g).mousedown(playSound);
-   $(y).mousedown(playSound);
-   
-   
+   $(r).click(toggleColor);
+   $(b).click(toggleColor);
+   $(g).click(toggleColor);
+   $(y).click(toggleColor);
+  
+
 
 
    
