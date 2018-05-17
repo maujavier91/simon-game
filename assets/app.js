@@ -10,10 +10,14 @@ let red    = "red",
     bOn="blueOn",
     rOn="redOn",
     yOn="yellowOn",
-    sg="#greenSound",
-    sr="#redSound",
-    sb="#blueSound",
-    sy="#yellowSound";
+    sg="greenSound",
+    sr="redSound",
+    sb="blueSound",
+    sy="yellowSound"
+    audiogreen=document.getElementById(sg),
+    audioyellow=document.getElementById(sy),
+    audioblue=document.getElementById(sb),
+    audiored=document.getElementById(sr);
 let sequence = []; 
 $(function () {
     
@@ -38,13 +42,25 @@ function toggleColor(colorOfSimon){
 
 function playSound(){
     switch (this.id){
-        case green: document.getElementById(gOn).play();
+        case green: audiogreen.play().then(() => { 
+        }).catch((err) => {
+            console.log(error);
+        });;
         break;
-        case blue: document.getElementById(bOn).play();
+        case blue: audioblue.play().then(() => {
+            }).catch((err) => {
+                console.log(error);
+            });
         break;
-        case red: document.getElementById(rOn).play();
+        case red: audiored.play().then(() => {
+            }).catch((err) => {
+                console.log(error);
+            });
         break;
-        case yellow: document.getElementById(yOn).play();
+        case yellow: audioyellow.play().then(() => {
+            }).catch((err) => {
+                console.log(error);
+            });
         break;}
 }
 
