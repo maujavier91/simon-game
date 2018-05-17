@@ -21,9 +21,9 @@ let red    = "red",
 let sequence = []; 
 $(function () {
     
-function toggleColor(colorOfSimon){
+function toggleColor(){
     switch (this.id){
-        case green: $(g).toggleClass(gOn);
+        case green: $(g).toggleClass(gOn); console.log("toque");
         break;
         case blue: $(b).toggleClass(bOn);
         break;
@@ -98,7 +98,7 @@ function numberColor(elementOfSequence){
    $(b).mousedown(playSound);
    $(g).mousedown(playSound);
    $(y).mousedown(playSound);
-   $("body").mouseup(toggleColor);
+   
    
 
 
