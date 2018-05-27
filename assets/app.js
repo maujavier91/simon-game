@@ -18,44 +18,41 @@ let red    = "red",
     audioyellow=document.getElementById(sy),
     audioblue=document.getElementById(sb),
     audiored=document.getElementById(sr);
-let sequence = []; 
+let sequence = [1,2,3,0,0,2,1,3,3]; 
 $(function () {
     
-function toggleColor(){
-    that=this;
-    switch (that.id){
-        case green: $(g).addClass(gOn); playSound(that); setTimeout(()=>$(g).removeClass(gOn), 300);
+function toggleColor(element){
+   
+    switch (element){
+        case 0: $(g).addClass(gOn); playSound(element); setTimeout(()=>$(g).removeClass(gOn), 300);
         break;
-        case blue: $(b).toggleClass(bOn); playSound(that); setTimeout(()=>$(b).removeClass(bOn), 300);
+        case 3: $(b).addClass(bOn); playSound(element); setTimeout(()=>$(b).removeClass(bOn), 300);
         break;
-        case red: $(r).toggleClass(rOn); playSound(that); setTimeout(()=>$(r).removeClass(rOn), 300);
+        case 1: $(r).addClass(rOn); playSound(element); setTimeout(()=>$(r).removeClass(rOn), 300);
         break;
-        case yellow: $(y).toggleClass(yOn); playSound(that); setTimeout(()=>$(y).removeClass(yOn), 300);
+        case 2: $(y).addClass(yOn); playSound(element); setTimeout(()=>$(y).removeClass(yOn), 300);
         break;
-        default : 
-        
-        break;
-    }
+            }
 }
 
-function playSound(that){
-    switch (that.id){
-        case green: audiogreen.play().then(() => { 
+function playSound(element){
+    switch (element){
+        case 0: audiogreen.play().then(() => { 
         }).catch((err) => {
             console.log(error);
         });;
         break;
-        case blue: audioblue.play().then(() => {
+        case 3: audioblue.play().then(() => {
             }).catch((err) => {
                 console.log(error);
             });
         break;
-        case red: audiored.play().then(() => {
+        case 1: audiored.play().then(() => {
             }).catch((err) => {
                 console.log(error);
             });
         break;
-        case yellow: audioyellow.play().then(() => {
+        case 2: audioyellow.play().then(() => {
             }).catch((err) => {
                 console.log(error);
             });
@@ -63,34 +60,40 @@ function playSound(that){
 }
 
 function addToSequence(){
-
+   sequence.push(Math.floor(Math.random()*4));
+   return sequence;
 }
-/** 
- * This function takes a number coming from the sequence array and returns the string of the color 
- * @param {number} elementOfSequence 
- */
-function numberColor(elementOfSequence){
 
-    switch (elementOfSequence) {
-        case 0: return green;
+function selectedColor() {
+    switch (this.id) {
+        case green: return color=0;
             break;
-        case 1: return red;
+        case red: return color=1;
             break;
-        case 2: return yellow;
+        case yellow: return color=2;
             break;
-        case 3: return blue;
-            break;
-        default:
-            break;
+        case blue: return color=3;
+        break;
     }
 }
-   $(r).click(toggleColor);
-   $(b).click(toggleColor);
-   $(g).click(toggleColor);
-   $(y).click(toggleColor);
-  
 
+function playSequence(){
 
+        sequence.forEach(function(i,b){
+          setTimeout(toggleColor,1000*b,i)
+          console.log(i);
+        }); 
+   ;
+}
+   $(r).click(selectedColor);
+   $(b).click(selectedColor);
+   $(g).click(selectedColor);
+   $(y).click(selectedColor);
+   $(r).click(function(){toggleColor(1)});
+   $(b).click(function(){toggleColor(3)});
+   $(g).click(function(){toggleColor(0)});
+   $(y).click(function(){toggleColor(2)});
+    playSequence();
 
    
     
