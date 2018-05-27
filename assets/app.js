@@ -18,7 +18,7 @@ let red    = "red",
     audioyellow=document.getElementById(sy),
     audioblue=document.getElementById(sb),
     audiored=document.getElementById(sr);
-let sequence = [1,2,3,0,0,2,1,3,3]; 
+let sequence = []; 
 $(function () {
     
 function toggleColor(element){
@@ -93,7 +93,10 @@ function playSequence(){
    $(b).click(function(){toggleColor(3)});
    $(g).click(function(){toggleColor(0)});
    $(y).click(function(){toggleColor(2)});
-    playSequence();
+    $("button").click(function(){
+        addToSequence();
+        playSequence();
+    });
 
    
     
